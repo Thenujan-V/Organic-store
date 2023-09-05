@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+#navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: .5rem 3rem;
+    box-shadow: 5px 5px 20px rgba(31, 29, 29,.5);
+    background-color: rgb(11, 11, 11);
+}
+.navbar .navbar-brand{
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(3, 246, 165) !important;
+}
+#navbarsupportedContent a{
+    color: #fff;
+    border-bottom: 2px solid transparent;
+}
+#navbarsupportedContent li{
+    padding-left: 30px;
+}
+#navbarsupportedContent a:hover{
+    border-bottom: 2px solid rgb(3, 246, 165);
+}
+#navbarsupportedContent button{
+    background: rgb(3, 246, 165);
+    width:5rem;
+    border-radius: 20px;
+}

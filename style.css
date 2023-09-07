@@ -60,10 +60,19 @@ section{
     background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
   }
 
-/*#home{
-    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7));
-    
-}*/
+#home{
+    display: inline;
+}
+#home #contant{
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    left: auto;
+}
 #home h1{
     font-size: 100px;
     color: #fff;
@@ -80,8 +89,9 @@ section{
     font-size: 18px;
     font-weight:500;
     color: #fff;
+    
 }
-#home .input-group{
+#home #contant .input-group{
     width: 40%;
     height: 43px;
 }

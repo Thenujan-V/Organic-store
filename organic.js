@@ -19,6 +19,7 @@ let image = document.getElementById('pic');
 let nextArrow = document.getElementById('rightArrow');
 let previousArrow = document.getElementById('leftArrow');
 let index = 0;
+let signup = document.getElementById('signup');
 
 window.addEventListener("DOMContentLoaded",function(){
     let testimonial = data[0];
@@ -53,3 +54,8 @@ function autoload(){
     loadedTestimonial(data[index]);
 }
 setInterval(autoload,3000)
+
+signup.addEventListener('click', (e) => {
+    e.preventDefault()
+    window.location = "Form.html";
+})

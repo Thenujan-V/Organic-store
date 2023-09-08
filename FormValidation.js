@@ -12,7 +12,9 @@ function checkRequired(inputs){
         if(input.value.trim() === ""){
             errorInput(input, `${getName(input)} is Required`);
         }
-        
+        else if(input.value.trim()){
+            success(input);
+        }
     })
 }
 
@@ -29,36 +31,45 @@ function lengthPassword(input,min,max){
     if(length < min){
         errorInput(input,`${getName(input)} is must be atleast greater than ${min} charecters`)
     }
-    if(length > min){
+    if(length > max){
         errorInput(input,`${getName(input)} is must be atleast less than ${max} charecters`)
-
     }
 }
 function checkConfirmation(password,confirmPassword){
     let passwordValue = password.value.trim();
     let confirmPasswordValue = confirmPassword.value.trim();
-    if(passwordValue !== confirmPasswordValue){
+    if(password.value.trim() === ""){
+        errorInput(password,`password is Required`)
+    }
+    else if(passwordValue !== confirmPasswordValue){
         errorInput(confirmPassword,`password not match`)
     }
     
+    
 }
-function ValidateEmail(mail) 
-{
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
-  {
-    return (true)
-  }
-    return (false)
+function validMail(mail){
+    return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(mail);
 }
-function checkEmail(input){
-    if(ValidateEmail(input.value.trim())){
-        errorInput(input,`This is not a mail id`)
+function checkEmail(mail){
+    if(mail.value.trim() === ""){
+        errorInput(mail, `Email is Required`);
+
     }
+    else if(!validMail(mail.value.trim())){
+        errorInput(mail,`This is not a valid email address`);
+    }
+    else if(validMail(mail.value.trim())){
+        success(mail);
+    }
+}
+function success(input){
+    let parentClass = input.parentElement;
+    parentClass.classList.remove("error");
 }
 button.addEventListener("click", (e) => {
     e.preventDefault();
     checkRequired([fullName,mail,phoneNo,password,confirmPassword]);
     lengthPassword(password,8,12);
     checkConfirmation(password,confirmPassword);
-    checkEmail(mail)
+    checkEmail(mail);
 })  

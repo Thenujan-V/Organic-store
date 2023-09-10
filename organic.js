@@ -57,5 +57,5 @@ setInterval(autoload,3000)
 
 signup.addEventListener('click', (e) => {
     e.preventDefault()
-    window.location = "Form.html";
+    window.location = "signup.html";
 })

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins&display=swap');
+*{
+    margin: 0px;
+    padding: 0;
+    /*box-sizing: border-box;*/
+    font-family: 'Josefin Sans', sans-serif;
+}
+.signup{
+    background:linear-gradient(to left,rgba(19, 18, 18,.8),rgba(22, 21, 21,.2)),url(Media/signup.jpg);
+    background-size: cover;
+    background-position: center;
+    object-fit:cover;
+    height: 100vh;
+}
+.signup h1{
+    text-align: center;
+    margin: 20px 0 ;
+}
+.form-group{
+    height: 80px;
+}
+.form-group .form-control{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+.signup h1{
+    color: #5f4bb7;
+    font-size: 50px;
+    font-weight:bolder;
+}
+.signup #btn{
+    width: 75%;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #5f4bb7;
+    color: #efe3e3;
+    font-size: 20px;
+    font-weight: 700;
+    border:none;
+}
+.signup #btn :hover{
+    color: black;
+    filter: brightness(500%);
+}
+.signup p{
+    padding-left: 15%;
+    visibility:hidden;
+}
+.signup .error p{
+    color: red;
+    font-weight: 500;
+    visibility: visible;
+}
+.signup .error input{
+    border-color: red;
+}
+.row .col-lg-6, .col-md-6{
+    background-color: rgba(37, 237, 237,.3);
+    height: 73vh;
+    margin-top: 200px !important;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 100px;
+    margin-left: 15px;
+}
+
+.forms2{
+    background-color: #5f4bb7;
+}

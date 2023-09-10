@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins&display=swap');
 *{
-    margin: 0px;
+    margin: 0;
     padding: 0;
     /*box-sizing: border-box;*/
     font-family: 'Josefin Sans', sans-serif;
@@ -25,6 +25,9 @@
     margin-right: auto;
     border-radius: 8px;
 }
+.form-group input::placeholder{
+    font-weight:600;
+}
 .signup h1{
     color: #5f4bb7;
     font-size: 50px;
@@ -41,32 +44,54 @@
     font-weight: 700;
     border:none;
 }
-.signup #btn :hover{
+#btn:hover{
     color: black;
-    filter: brightness(500%);
+    filter: brightness(90%);
 }
 .signup p{
     padding-left: 15%;
-    visibility:hidden;
+    /*visibility:hidden;*/
 }
 .signup .error p{
     color: red;
     font-weight: 500;
-    visibility: visible;
+    /*visibility: visible;*/
 }
 .signup .error input{
     border-color: red;
 }
 .row .col-lg-6, .col-md-6{
     background-color: rgba(37, 237, 237,.3);
-    height: 73vh;
+    height: 83vh;
     margin-top: 200px !important;
     border-radius: 15px;
     position: absolute;
-    bottom: 100px;
+    bottom: 150px;
     margin-left: 15px;
 }
 
 .forms2{
     background-color: #5f4bb7;
+}
+.connect h5{
+    color: rgb(55, 54, 54);
+    font-weight: 600;
+}
+.connect .brands{
+    
+}
+.connect .brands a{
+    display: flex;
+    flex-direction: column;
+    background-color: #5f4bb7;
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.brands a i{
+    color: black;
+    
 }

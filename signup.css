@@ -50,12 +50,12 @@
 }
 .signup p{
     padding-left: 15%;
-    /*visibility:hidden;*/
+    visibility:hidden;
 }
 .signup .error p{
     color: red;
     font-weight: 500;
-    /*visibility: visible;*/
+    visibility: visible;
 }
 .signup .error input{
     border-color: red;
@@ -73,21 +73,6 @@
 .connect h5{
     color: rgb(55, 54, 54);
     font-weight: 600;
-}
-.connect .brands{
-    
-}
-.connect .brands a{
-    /*display: inline;
-    background-color: #5f4bb7;
-    border: 2px solid black;
-    height: 50px;
-    width: 50px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;*/
-  
-    
 }
 .brands a i{
     color: black;

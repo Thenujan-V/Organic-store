@@ -60,14 +60,11 @@
 .signup .error input{
     border-color: red;
 }
-.row .col-lg-6, .col-md-6{
+.row .col-lg-6, .col-md-8{
     background-color: rgba(37, 237, 237,.3);
-    height: 83vh;
-    margin-top: 200px !important;
+    height: 86vh;
     border-radius: 15px;
-    position: absolute;
-    bottom: 150px;
-    margin-left: 15px;
+    margin: 55px 15px;
 }
 
 .forms2{
@@ -81,17 +78,36 @@
     
 }
 .connect .brands a{
-    display: flex;
-    flex-direction: column;
+    /*display: inline;
     background-color: #5f4bb7;
     border: 2px solid black;
     height: 50px;
     width: 50px;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 50%;*/
+  
+    
 }
 .brands a i{
     color: black;
-    
+    font-size: 40px;
+    background-color: rgb(243, 235, 235);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 10px !important;
+}
+.line{
+    width: 100px;
+    border-bottom: 1px solid black;
+    position: relative;
+    bottom: 26px;
+}
+
+.connectwith{
+    display: flex;
+    gap: 11px;
+    justify-content: center;
 }

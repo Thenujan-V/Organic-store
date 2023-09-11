@@ -273,3 +273,20 @@ section{
     align-self: self-start;
     margin-top: 20px;
 }
+#social a{
+    display: flex;
+    margin-top: 20px;
+}
+#social a img{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    transition: .6s;
+
+}
+#social a span{
+    margin: 12px;
+}
+#social a:hover{
+    transform: translateX(1%);
+}

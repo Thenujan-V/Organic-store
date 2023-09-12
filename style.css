@@ -258,12 +258,19 @@ section{
 }
 #footright address {
     font-size:18px; 
+    margin-bottom: 40px;
 }
-#footright #con-us{
-   
+
+#footright address a{
+   color: orangered;
 }
 #con-us{
-    padding: 5px;
+    padding-left: 22%;
+    padding-top: 10px;
+    text-align: start;
+}
+#con-us:hover{
+    color: orangered;
 }
 #social{
     text-align: center;
@@ -278,15 +285,17 @@ section{
     margin-top: 20px;
 }
 #social a img{
-    width: 50px;
-    height:50px;
-    border-radius: 50%;
+    width: 40px;
+    height:40px;
     transition: .6s;
-
 }
 #social a span{
-    margin: 12px;
+    margin-top: 9px;
+    margin-left:12px;
 }
 #social a:hover{
     transform: translateX(1%);
+}
+#social a span:hover{
+    color: orangered;
 }

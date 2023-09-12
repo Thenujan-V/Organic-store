@@ -5,26 +5,32 @@ let mail = document.getElementById('mail');
 let phoneNo = document.getElementById('pno');
 let password = document.getElementById('password');
 let confirmPassword = document.getElementById('confirmpassword');
+
+let validateSuccess = true;
 //let formGroup = document.getElementById('form-group');
 
-function checkRequired(inputs){
-    inputs.forEach((input) => {
-        if(input.value.trim() === ""){
-            errorInput(input, `${getName(input)} is Required`);
-        }
-        else if(input.value.trim()){
-            success(input);
-        }
-    })
-}
-
 function errorInput(input,message){
+    validateSuccess = false;
     let formGroup = input.parentElement;
     formGroup.className = "form-group error";
     formGroup.querySelector("p").innerText = message;
 }
 function getName(input){
     return input.getAttribute("data-name");
+}
+
+
+function checkRequired(inputs){
+    inputs.forEach((input) => {
+        if(input.value.trim() === ""){
+            errorInput(input, `${getName(input)} is Required`);
+            
+        }
+        else if(input.value.trim()){
+            success(input);
+            
+        }
+    })
 }
 function lengthPassword(input,min,max){
     let length = input.value.trim().length;
@@ -63,13 +69,27 @@ function checkEmail(mail){
     }
 }
 function success(input){
+    validateSuccess = true;
     let parentClass = input.parentElement;
     parentClass.classList.remove("error");
+
 }
-button.addEventListener("click", (e) => {
-    e.preventDefault();
+function validateFormElements([fullName,mail,phoneNo,password,confirmPassword]){
     checkRequired([fullName,mail,phoneNo,password,confirmPassword]);
     lengthPassword(password,8,12);
-    checkConfirmation(password,confirmPassword);
     checkEmail(mail);
-})  
+    checkConfirmation(password,confirmPassword);
+        
+    return validateSuccess;
+
+} 
+button.addEventListener("click", (e) => {
+    if(!validateFormElements([fullName,mail,phoneNo,password,confirmPassword])){
+        console.log("okey")
+        e.preventDefault();
+    }
+    else{
+        console.log("okey1")
+
+    }
+})

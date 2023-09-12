@@ -277,7 +277,7 @@ section{
 }
 
 .footbox{
-    align-self: self-start;
+    align-self: start;
     margin-top: 20px;
 }
 #social a{
@@ -290,6 +290,7 @@ section{
     transition: .6s;
 }
 #social a span{
+    font-size: 15px;
     margin-top: 9px;
     margin-left:12px;
 }
@@ -298,4 +299,9 @@ section{
 }
 #social a span:hover{
     color: orangered;
+}
+#details{
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 100px;
 }

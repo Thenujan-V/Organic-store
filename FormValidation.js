@@ -26,7 +26,7 @@ function success(input){
     parentClass.classList.remove("error");
 
 }
-function checkRequired(inputs){
+/*function checkRequired(inputs){
     inputs.forEach((input) => {
         if(input.value.trim() === ""){
             errorInput(input, `${getName(input)} is Required`);
@@ -37,7 +37,24 @@ function checkRequired(inputs){
             
         }
     })
+}*/
+function checkName(fullName){
+    if(fullName.value.trim() === ""){
+        errorInput(fullName,`${getName(fullName)} is Required`)
+    }
+    else if(fullName.value.trim()){
+        success(fullName)
+    }
 }
+function checkPhoneNumber(phoneNo){
+    if(phoneNo.value.trim() === ""){
+        errorInput(phoneNo,`${getName(phoneNo)} is Required`)
+    }
+    else if(phoneNo.value.trim()){
+        success(phoneNo)
+    }
+}
+
 function lengthPassword(input,min,max){
     let length = input.value.trim().length;
     if(length < min){
@@ -46,15 +63,31 @@ function lengthPassword(input,min,max){
     if(length > max){
         errorInput(input,`${getName(input)} is must be atleast less than ${max} charecters`)
     }
+    if(length < max && length > min){
+        success(input)
+    }
 }
 function checkConfirmation(password,confirmPassword){
     let passwordValue = password.value.trim();
     let confirmPasswordValue = confirmPassword.value.trim();
+
     if(password.value.trim() === ""){
         errorInput(password,`password is Required`)
     }
-    else if(passwordValue !== confirmPasswordValue){
+    else if(password.value.trim()){
+        success(password)
+    }
+    if(confirmPassword.value.trim() === ""){
+        errorInput(confirmPassword,`confirmation password is Required`)
+    }
+    else if(confirmPassword.value.trim()){
+        success(confirmPassword)
+    }
+    if(passwordValue !== confirmPasswordValue){
         errorInput(confirmPassword,`password not match`)
+    }
+   else if(passwordValue === confirmPasswordValue){
+        success(fullName)
     }
     
     
@@ -76,9 +109,10 @@ function checkEmail(mail){
 }
 
 function validateFormElements([fullName,mail,phoneNo,password,confirmPassword]){
-    if(checkRequired([fullName,mail,phoneNo,password,confirmPassword])){
+    /*if(checkRequired([fullName,mail,phoneNo,password,confirmPassword])){
         return validateSuccess;
-    }
+    }*/
+    
     if(lengthPassword(password,8,12)){
         return validateSuccess;
     }
@@ -86,6 +120,12 @@ function validateFormElements([fullName,mail,phoneNo,password,confirmPassword]){
         return validateSuccess;
     }
     if(checkConfirmation(password,confirmPassword)){
+        return validateSuccess;
+    }
+    if(checkName(fullName)){
+        return validateSuccess;
+    }
+    if(checkPhoneNumber(phoneNo)){
         return validateSuccess;
     }
     return validateSuccess;

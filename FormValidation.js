@@ -41,31 +41,41 @@ function success(input){
 function checkName(fullName){
     if(fullName.value.trim() === ""){
         errorInput(fullName,`${getName(fullName)} is Required`)
+        nameValidate = false;
     }
     else if(fullName.value.trim()){
         success(fullName)
+        nameValidate = true;
     }
+    return nameValidate
 }
 function checkPhoneNumber(phoneNo){
     if(phoneNo.value.trim() === ""){
-        errorInput(phoneNo,`${getName(phoneNo)} is Required`)
+        errorInput(phoneNo,`${getName(phoneNo)} is Required`);
+        phoneNoValidate = false;
     }
     else if(phoneNo.value.trim()){
         success(phoneNo)
+        phoneNoValidate = true;
     }
+    return phoneNoValidate;
 }
 
 function lengthPassword(input,min,max){
     let length = input.value.trim().length;
     if(length < min){
-        errorInput(input,`${getName(input)} is must be atleast greater than ${min} charecters`)
+        errorInput(input,`${getName(input)} is must be atleast greater than ${min} charecters`);
+        lengthValidate = false;
     }
     if(length > max){
-        errorInput(input,`${getName(input)} is must be atleast less than ${max} charecters`)
+        errorInput(input,`${getName(input)} is must be atleast less than ${max} charecters`);
+        lengthValidate = false;
     }
     if(length < max && length > min){
         success(input)
+        lengthValidate = true;
     }
+    return lengthValidate;
 }
 function checkConfirmation(password,confirmPassword){
     let passwordValue = password.value.trim();
@@ -74,21 +84,19 @@ function checkConfirmation(password,confirmPassword){
     if(password.value.trim() === ""){
         errorInput(password,`password is Required`)
     }
-    else if(password.value.trim()){
-        success(password)
-    }
     if(confirmPassword.value.trim() === ""){
         errorInput(confirmPassword,`confirmation password is Required`)
+        if(passwordValue !== confirmPasswordValue){
+        errorInput(confirmPassword,`password not match`)
+    }
     }
     else if(confirmPassword.value.trim()){
         success(confirmPassword)
     }
-    if(passwordValue !== confirmPasswordValue){
-        errorInput(confirmPassword,`password not match`)
-    }
-   else if(passwordValue === confirmPasswordValue){
+    
+   /* else if(passwordValue === confirmPasswordValue){
         success(fullName)
-    }
+    }*/
     
     
 }
@@ -112,13 +120,6 @@ function validateFormElements([fullName,mail,phoneNo,password,confirmPassword]){
     /*if(checkRequired([fullName,mail,phoneNo,password,confirmPassword])){
         return validateSuccess;
     }*/
-    
-    if(lengthPassword(password,8,12)){
-        return validateSuccess;
-    }
-    if(checkEmail(mail)){
-        return validateSuccess;
-    }
     if(checkConfirmation(password,confirmPassword)){
         return validateSuccess;
     }
@@ -128,6 +129,13 @@ function validateFormElements([fullName,mail,phoneNo,password,confirmPassword]){
     if(checkPhoneNumber(phoneNo)){
         return validateSuccess;
     }
+    if(lengthPassword(password,8,12)){
+        return validateSuccess;
+    }
+    if(checkEmail(mail)){
+        return validateSuccess;
+    }
+    
     return validateSuccess;
 }   
 button.addEventListener("click", (e) => {
@@ -139,7 +147,7 @@ button.addEventListener("click", (e) => {
     }
     else{
         console.log("okey2")
-
+        //e.preventDefault();
     }
     console.log(validateSuccess)
 })

@@ -11,6 +11,7 @@ let validateSuccess = true;
 
 function errorInput(input,message){
     validateSuccess = false;
+    //console.log(validateSuccess);
     let formGroup = input.parentElement;
     formGroup.className = "form-group error";
     formGroup.querySelector("p").innerText = message;
@@ -18,8 +19,13 @@ function errorInput(input,message){
 function getName(input){
     return input.getAttribute("data-name");
 }
+function success(input){
+    validateSuccess = true;
+    //console.log(validateSuccess);
+    let parentClass = input.parentElement;
+    parentClass.classList.remove("error");
 
-
+}
 function checkRequired(inputs){
     inputs.forEach((input) => {
         if(input.value.trim() === ""){
@@ -68,28 +74,32 @@ function checkEmail(mail){
         success(mail);
     }
 }
-function success(input){
-    validateSuccess = true;
-    let parentClass = input.parentElement;
-    parentClass.classList.remove("error");
 
-}
 function validateFormElements([fullName,mail,phoneNo,password,confirmPassword]){
-    checkRequired([fullName,mail,phoneNo,password,confirmPassword]);
-    lengthPassword(password,8,12);
-    checkEmail(mail);
-    checkConfirmation(password,confirmPassword);
-        
+    if(checkRequired([fullName,mail,phoneNo,password,confirmPassword])){
+        return validateSuccess;
+    }
+    if(lengthPassword(password,8,12)){
+        return validateSuccess;
+    }
+    if(checkEmail(mail)){
+        return validateSuccess;
+    }
+    if(checkConfirmation(password,confirmPassword)){
+        return validateSuccess;
+    }
     return validateSuccess;
-
-} 
+}   
 button.addEventListener("click", (e) => {
+
     if(!validateFormElements([fullName,mail,phoneNo,password,confirmPassword])){
-        console.log("okey")
+        console.log(validateSuccess)
+        console.log("ok1")
         e.preventDefault();
     }
     else{
-        console.log("okey1")
+        console.log("okey2")
 
     }
+    console.log(validateSuccess)
 })

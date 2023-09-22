@@ -21,7 +21,7 @@ function errorInput(input,message){
     formGroup.querySelector("p").innerText = message;
 }
 function getName(input){
-    return input.getAttribute("name");
+    return input.getAttribute("data-name");
 }
 function success(input){
     let parentClass = input.parentElement;

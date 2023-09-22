@@ -15,23 +15,23 @@
             <h1>Sign up</h1>
             <form action="save.php" method="post">
                 <div class="form-group">
-                    <input type="text" id="fullname" name="FullName" placeholder="Full Name" class="form-control">
+                    <input type="text" id="fullname" name="FullName" data-name="Full Name" placeholder="Full Name" class="form-control">
                     <p></p>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="mail" name="mail" placeholder="E-mail" class="form-control ">
+                    <input type="text" id="mail" name="mail" data-name="E-mail" placeholder="E-mail" class="form-control ">
                     <p></p>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="pno" name="PhoneNumber" placeholder="Phone Number" class="form-control">
+                    <input type="text" id="pno" name="PhoneNumber" data-name="Phone Number" placeholder="Phone Number" class="form-control">
                     <p></p>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" name="Password" placeholder="Password" class="form-control">
+                    <input type="password" id="password" name="Password" data-name="Password" placeholder="Password" class="form-control">
                     <p></p>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="confirmpassword" name="Confirmation password" placeholder="Confirm Password" class="form-control">
+                    <input type="password" id="confirmpassword" data-name="Confirmation password" placeholder="Confirm Password" class="form-control">
                     <p></p>
                 </div>
                 <input type="submit" id="btn" class="form-control" name="submit">

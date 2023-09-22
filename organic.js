@@ -57,6 +57,6 @@ setInterval(autoload,3000)
 
 signup.addEventListener('click', (e) => {
     e.preventDefault()
-    window.open("signup.html","_blank");
+    window.open("welcome.php","_blank");
     //window.location = "signup.html";
 })

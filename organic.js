@@ -60,3 +60,7 @@ signup.addEventListener('click', (e) => {
     window.open("welcome.php","_blank");
     //window.location = "signup.html";
 })
+let login = document.getElementById("login");
+login.addEventListener('click',() => {
+    window.open("login.html","_blank")
+})

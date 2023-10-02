@@ -20,7 +20,7 @@
         header('location:welcome.html');
     }
     else{
-        echo 'something went to wrong...';
+        echo 'something went to wrong...';  
     }
     
 ?>

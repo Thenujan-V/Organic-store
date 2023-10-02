@@ -17,17 +17,17 @@
         $row = mysqli_fetch_assoc($result);
         if(mysqli_num_rows($result) > 0){
             if($password == $row["password"]){
-                $_SESSION["login"] = true;
+                    $_SESSION["login"] = true;
                 header("location:loginpage.html");
             }
             else{
                 echo
-                "<script>alert('sonething wrong...')</script>";
+                "<script>alert('something wrong...')</script>";
             }
         }
         else{
             echo
-                "<script>alert('username wrong...')</script>";
+                "<script>alert('username or password wrong...')</script>";
         }
     }
 ?>
